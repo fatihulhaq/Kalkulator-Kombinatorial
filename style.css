@@ -1,0 +1,218 @@
+/* Variabel Warna Terang (Default) */
+:root {
+    --bg-body: #f4f7f6;
+    --bg-card: #ffffff;
+    --text-main: #333333;
+    --text-muted: #666666;
+    --border-color: #cccccc;
+    --primary: #007bff;
+    --primary-hover: #0056b3;
+    --bg-hasil: #e9ecef;
+    --bg-langkah: #f8f9fa;
+}
+
+/* Variabel Warna Mode Gelap */
+body.dark-mode {
+    --bg-body: #121212;
+    --bg-card: #1e1e1e;
+    --text-main: #e0e0e0;
+    --text-muted: #a0a0a0;
+    --border-color: #444444;
+    --primary: #3b82f6;
+    --primary-hover: #2563eb;
+    --bg-hasil: #2a2a2a;
+    --bg-langkah: #1a1a1a;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--bg-body);
+    color: var(--text-main);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    padding: 40px 20px;
+    box-sizing: border-box;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.theme-toggle {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    padding: 8px 15px;
+    background-color: var(--bg-card);
+    color: var(--text-main);
+    border: 1px solid var(--border-color);
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: bold;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.app-container {
+    width: 100%;
+    max-width: 800px;
+}
+
+/* TATA LETAK RESPONSIF (Flexbox) */
+.main-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+@media (min-width: 768px) {
+    .main-wrapper {
+        flex-direction: row;
+        align-items: flex-start;
+    }
+    .kalkulator-section, .hasil-section {
+        flex: 1;
+    }
+}
+
+.kalkulator-section, .hasil-section {
+    background-color: var(--bg-card);
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    font-size: 24px;
+    margin-top: 0;
+    margin-bottom: 5px;
+}
+
+.subtitle {
+    color: var(--text-muted);
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+
+.input-group {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+input {
+    width: 100%;
+    padding: 12px;
+    background-color: var(--bg-body);
+    border: 1px solid var(--border-color);
+    color: var(--text-main);
+    border-radius: 6px;
+    box-sizing: border-box;
+    font-size: 16px;
+}
+
+input:focus {
+    outline: none;
+    border-color: var(--primary);
+}
+
+.btn-hitung {
+    width: 100%;
+    padding: 12px;
+    background-color: var(--primary);
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.btn-hitung:hover {
+    background-color: var(--primary-hover);
+}
+
+.hasil-container {
+    padding: 15px;
+    background-color: var(--bg-hasil);
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+}
+
+.angka-highlight {
+    color: var(--primary);
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.langkah-box {
+    margin-top: 15px;
+    padding: 15px;
+    background-color: var(--bg-langkah);
+    border-left: 4px solid var(--primary);
+    border-radius: 4px;
+    font-size: 14px;
+    line-height: 1.6;
+    display: none; 
+}
+
+.divider {
+    margin: 30px 0;
+    border: none;
+    border-top: 1px solid var(--border-color);
+}
+
+/* STYLING PROFIL KELOMPOK (Accordion) - REVISI UKURAN SEDANG */
+.profil-kelompok {
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    max-width: 450px; /* Membatasi lebar agar tidak terlalu besar di desktop */
+    margin: 0 auto; /* Memastikan posisinya berada di tengah */
+}
+
+.profil-kelompok summary {
+    padding: 12px;
+    font-weight: bold;
+    font-size: 14px; /* Ukuran font lebih sedang */
+    cursor: pointer;
+    background-color: var(--bg-hasil);
+    list-style: none;
+    text-align: center;
+}
+
+.profil-kelompok summary::-webkit-details-marker {
+    display: none;
+}
+
+.isi-profil {
+    padding: 15px;
+    text-align: center;
+}
+
+.isi-profil h3 {
+    margin-top: 0;
+    font-size: 15px;
+    margin-bottom: 12px;
+}
+
+.isi-profil ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.isi-profil li {
+    font-size: 13px; /* Ukuran font nama anggota disesuaikan */
+    color: var(--text-muted);
+    margin-bottom: 6px; /* Jarak antar nama dirapatkan */
+    padding: 6px 10px; /* Kotak masing-masing nama diperkecil */
+    background-color: var(--bg-body);
+    border-radius: 4px;
+}

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kalkulator Kombinatorial - Kelompok 6</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Tombol Ganti Tema -->
+    <button id="btnTema" onclick="ubahTema()" class="theme-toggle">🌙</button>
+
+    <div class="app-container">
+        <!-- Wrapper Utama (Akan menyamping di Desktop, menumpuk di HP) -->
+        <div class="main-wrapper">
+            
+            <!-- Bagian Kiri: Input Kalkulator -->
+            <div class="kalkulator-section">
+                <h1>Kalkulator Kombinatorial</h1>
+                <p class="subtitle">Hitung Permutasi P(n,r) dan Kombinasi C(n,r)</p>
+                
+                <div class="input-group">
+                    <label for="nilaiN">Nilai n (Total Objek):</label>
+                    <input type="number" id="nilaiN" min="0" placeholder="Masukkan n">
+                </div>
+                
+                <div class="input-group">
+                    <label for="nilaiR">Nilai r (Objek yang dipilih):</label>
+                    <input type="number" id="nilaiR" min="0" placeholder="Masukkan r">
+                </div>
+                
+                <button type="button" class="btn-hitung" onclick="hitungKombinatorial()">Hitung</button>
+            </div>
+
+            <!-- Bagian Kanan: Hasil dan Langkah -->
+            <div class="hasil-section">
+                <div class="hasil-container" id="areaHasil">
+                    <p><strong>Permutasi P(n,r):</strong> <span id="hasilPermutasi" class="angka-highlight">-</span></p>
+                    <p><strong>Kombinasi C(n,r):</strong> <span id="hasilKombinasi" class="angka-highlight">-</span></p>
+                </div>
+
+                <div id="langkahPenyelesaian" class="langkah-box">
+                    <!-- Langkah-langkah akan muncul di sini -->
+                </div>
+            </div>
+
+        </div>
+
+        <hr class="divider">
+        
+        <!-- Bagian Profil Kelompok (Bisa di-klik/Expand) -->
+        <details class="profil-kelompok">
+            <summary>👤 Profil Kelompok 6 (Klik untuk melihat anggota)</summary>
+            <div class="isi-profil">
+                <h3>Tugas Projek Matematika Diskret - Kelompok 6</h3>
+                <ul>
+                    <li>Syaibanir Romadhoni (260401100165)</li>
+                    <li>Muhammad Fatihul Haq (260401100164)</li>
+                    <li>Acintya Dewiy (260401100199)</li>
+                    <li>Muhammad Rafi Maulana (260401100196)</li>
+                    <li>Nur Hidayah Ramadhan (260401100170)</li>
+                </ul>
+            </div>
+        </details>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
